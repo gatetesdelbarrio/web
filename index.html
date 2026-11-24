@@ -17,8 +17,8 @@ a{color:var(--azul-osc)}
 nav a{color:#fff;margin-left:1rem;text-decoration:none}
 nav a:hover{color:var(--azul)}
 section{max-width:60rem;margin:0 auto;padding:3rem 1.25rem}
-section.alt{max-width:none;background:var(--claro)}
-section.alt>*{max-width:60rem;margin-left:auto;margin-right:auto}
+section.alt{max-width:none;background:var(--claro);padding-left:max(1.25rem,calc((100% - 60rem)/2));padding-right:max(1.25rem,calc((100% - 60rem)/2))}
+section.alt>*{max-width:none}
 .hero{text-align:center;padding-top:4rem}
 .hero-logo{width:min(260px,70vw);height:auto;border-radius:1.2rem}
 h1{font-size:clamp(2rem,6vw,3.2rem);margin:.5rem 0}
