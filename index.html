@@ -35,6 +35,7 @@ h2{font-size:1.8rem;border-bottom:4px solid var(--azul);display:inline-block;pad
 .todo{background:#fff6d6;border-left:4px solid #e0b000;padding:.5rem .8rem;font-size:.9rem}
 footer{background:var(--negro);color:#ddd;text-align:center;padding:1.5rem 1rem;font-size:.9rem}
 @media(max-width:560px){nav a{margin:0 .8rem 0 0}.top{justify-content:center}}
+.embed{margin-top:1rem;text-align:center}.embed iframe{width:100%;border:0;border-radius:.8rem;background:#fff}.nota{font-size:.85rem;opacity:.8}
 </style>
 </head>
 <body>
@@ -43,6 +44,8 @@ footer{background:var(--negro);color:#ddd;text-align:center;padding:1.5rem 1rem;
   <nav>
     <a href="#quienes-somos">Quiénes somos</a>
     <a href="#ayudar">Cómo ayudar</a>
+    <a href="#adopta">Adopta</a>
+    <a href="#directo">Directo</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
@@ -87,10 +90,30 @@ footer{background:var(--negro);color:#ddd;text-align:center;padding:1.5rem 1rem;
   </div>
 </section>
 
+<section id="adopta">
+  <h2>Adopta, no compres</h2>
+  <p>Si quieres adoptar, rellena el formulario de candidato de la asociación (es un formulario de Google, tus datos los recibe Gatetes del Barrio a través de Google, no de esta web). La adopción se hace con un contrato de adopción responsable.</p>
+  <div class="embed" data-src="https://docs.google.com/forms/d/e/1FAIpQLSeJgIxkVYwuDsl9w0RuWtQoKAESuzb-NQlkyo3OVkWeG3CI3w/viewform?embedded=true" data-h="700">
+    <button class="btn" type="button">Mostrar el formulario aquí</button>
+    <p class="nota">Al mostrarlo se carga contenido de Google. También puedes <a href="https://forms.gle/nP84wdVC7PU2gWB48" rel="noopener">abrirlo en una pestaña nueva</a>.</p>
+  </div>
+</section>
+
+<section id="directo" class="alt">
+  <h2>En directo en Twitch</h2>
+  <p>Canal: <a href="https://www.twitch.tv/gatetesdelbarrio" rel="noopener">twitch.tv/gatetesdelbarrio</a></p>
+  <div class="embed" data-twitch="gatetesdelbarrio" data-h="450">
+    <button class="btn" type="button">Mostrar el canal de Twitch</button>
+    <p class="nota">Al mostrarlo se carga contenido de Twitch (puede usar cookies propias de Twitch).</p>
+  </div>
+</section>
+
 <section id="contacto">
   <h2>Contacto y redes</h2>
   <ul class="links">
     <li><a href="https://www.instagram.com/gatetesdelbarrio/" rel="noopener">Instagram: @gatetesdelbarrio</a></li>
+    <li><a href="https://www.threads.com/@gatetesdelbarrio" rel="noopener">Threads: @gatetesdelbarrio</a></li>
+    <li><a href="https://www.twitch.tv/gatetesdelbarrio" rel="noopener">Twitch: gatetesdelbarrio</a></li>
     <li><a href="https://paypal.me/gatetesdelbarrio" rel="noopener">PayPal: paypal.me/gatetesdelbarrio</a></li>
   </ul>
   <p class="todo">[Pendiente: correo de contacto público y otras redes si la asociación quiere mostrarlos.]</p>
@@ -100,5 +123,12 @@ footer{background:var(--negro);color:#ddd;text-align:center;padding:1.5rem 1rem;
 <footer>
   <p>© Gatetes del Barrio. Esta web no usa cookies ni recoge datos personales.</p>
 </footer>
+<script>
+document.querySelectorAll('.embed').forEach(function(e){var b=e.querySelector('button');b.addEventListener('click',function(){
+var f=document.createElement('iframe'),h=e.dataset.h+'px';f.style.height=h;f.loading='lazy';f.allowFullscreen=true;
+if(e.dataset.twitch){f.src='https://player.twitch.tv/?channel='+e.dataset.twitch+'&parent='+location.hostname+'&autoplay=false';f.title='Twitch'}
+else{f.src=e.dataset.src;f.title='Formulario de adopción'}
+e.innerHTML='';e.appendChild(f)})});
+</script>
 </body>
 </html>
